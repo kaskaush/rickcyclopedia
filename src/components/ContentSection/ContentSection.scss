@@ -1,0 +1,13 @@
+.content-section {
+  display: flex;
+  flex-direction: column;
+  @include breakpoint(medium) {
+    margin-left: 32px;
+    flex-basis: 75%;
+  }
+}
+
+@import "../SelectedFilters/SelectedFilters.scss";
+@import "../SearchAndSort/SearchAndSort.scss";
+@import "../ResultsSection/ResultsSection.scss";
+@import "../../core-components/CharacterCard/CharacterCard.scss";

@@ -1,0 +1,13 @@
+/* Variables */
+@import "./variables.scss";
+
+/* Mixins */
+@import "./break-points.mixins.scss";
+
+/* Components */
+@import "../components/Header/Header.scss";
+@import "../components/Main/Main.scss";
+
+.App {
+  padding-top: 57px;
+}

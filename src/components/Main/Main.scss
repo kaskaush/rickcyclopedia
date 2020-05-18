@@ -1,0 +1,13 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  margin: 16px;
+
+  @include breakpoint(medium) {
+    flex-direction: row;
+    margin: 32px;
+  }
+}
+
+@import "../Sidebar/Sidebar.scss";
+@import "../ContentSection/ContentSection.scss";
