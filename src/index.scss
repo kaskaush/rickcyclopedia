@@ -10,7 +10,13 @@
 }
 
 body {
+  @media (min-width: 48rem) {
+    min-height: 100vh;
+    overflow: hidden;
+  }
   background-color: #333234;
+  display: flex;
+  flex-direction: column;
 }
 
 code {

@@ -1,30 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
+import Button from "../../core-components/Button";
+import Select from "../../core-components/Select";
+import SearchBar from "../../core-components/SearchBar";
+import { store } from "../../config/store";
 
 const SearchAndSort = () => {
+  const state = useContext(store).state;
+  const { labels, sortOptions } = state;
+
   return (
     <div className="search-sort">
-      <div className="search-sort__search-section">
-        <label htmlFor="search-term" className="search-sort__search-title">
-          Search by name
-        </label>
-        <div className="search-sort__input-section">
-          <input id="search-term" type="text" className="custom-input" />
-          <button type="button" className="custom-btn">
-            Search
-          </button>
-        </div>
-      </div>
+      <SearchBar
+        inputLabel={labels.lblSearchLabel}
+        btnLabel={labels.lblSearchCtaLabel}
+      />
       <div className="search-sort__sort-section">
-        <select className="custom-select search-sort__sort">
-          <option>Sort by ID</option>
-          <option>Sort by Name</option>
-        </select>
-        <button type="button" className="custom-btn icon">
-          &#9650;
-        </button>
-        <button type="button" className="custom-btn icon">
-          &#9660;
-        </button>
+        <Select _class="search-sort__sort" optionsData={sortOptions} />
+        <Button isIcon>&#9650;</Button>
+        <Button isIcon>&#9660;</Button>
       </div>
     </div>
   );

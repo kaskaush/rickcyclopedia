@@ -1,11 +1,15 @@
 .main {
   display: flex;
   flex-direction: column;
+  -webkit-box-flex: 1;
   margin: 16px;
+  flex: 1 1 auto;
 
   @include breakpoint(medium) {
     flex-direction: row;
-    margin: 32px;
+    overflow: hidden;
+    position: relative;
+    margin: 0;
   }
 }
 

@@ -4,6 +4,13 @@
 /* Mixins */
 @import "./break-points.mixins.scss";
 
+/* Core components */
+@import "../core-components/Button/Button.scss";
+@import "../core-components/Checkbox/Checkbox.scss";
+@import "../core-components/Select/Select.scss";
+@import "../core-components/Chip/Chip.scss";
+@import "../core-components/SearchBar/SearchBar.scss";
+
 /* Components */
 @import "../components/Header/Header.scss";
 @import "../components/Main/Main.scss";

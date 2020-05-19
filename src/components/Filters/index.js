@@ -1,18 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import FilterCategory from "./sub-components/FilterCategory";
+import Button from "../../core-components/Button";
+import { store } from "../../config/store";
 
 const Filters = () => {
-  const filters = ["status", "species", "gender", "origin"];
+  const state = useContext(store).state;
+  const { labels, filterCategories } = state;
 
   return (
     <div className="filters">
       <div className="filters__title-section">
-        <h3 className="filters__title">Filters</h3>
-        <button className="custom-btn icon filters__toggle">+</button>
+        <h3 className="filters__title">{labels.lblFiltersTitle}</h3>
+        <Button isIcon _class="filters__toggle">
+          +
+        </Button>
       </div>
       <div className="filters__section">
-        {filters.map((filter) => {
-          return <FilterCategory title={filter} />;
+        {filterCategories.map((filterCategory) => {
+          return (
+            <FilterCategory key={filterCategory.type} {...filterCategory} />
+          );
         })}
       </div>
     </div>

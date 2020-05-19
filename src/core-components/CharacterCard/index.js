@@ -1,43 +1,61 @@
 import React from "react";
 
-const Card = () => {
+const CharacterCard = ({
+  name = "",
+  id = "",
+  createdTimestamp = "",
+  labels = {},
+  status = "",
+  species = "",
+  gender = "",
+  origin = "",
+  lastLocation = "",
+}) => {
+  const {
+    lblStatus,
+    lblSpecies,
+    lblGender,
+    lblOrigin,
+    lblLastLocation,
+  } = labels;
+
   return (
     <div className="character-card">
       <div className="character-card__image-section">
         <img src="" alt="img" className="character-card__image" />
         <div className="character-card__title-wrapper">
           <div className="character-card__title-section">
-            <h4 className="character-card__title">Title</h4>
+            <h4 className="character-card__title">{name}</h4>
             <span className="character-card__details">
-              id:111 - Created 2 years ago
+              {`id:${id} - Created {timestamp}`}
             </span>
           </div>
         </div>
       </div>
       <div className="character-card__content-section">
         <div className="character-card__desc-item">
-          <span className="character-card__desc-type">Status</span>
-          <span className="character-card__desc-data">Alive</span>
+          <span className="character-card__desc-type">{lblStatus}</span>
+          <span className="character-card__desc-data">{status}</span>
         </div>
         <div className="character-card__desc-item">
-          <span className="character-card__desc-type">Species</span>
-          <span className="character-card__desc-data">Alive</span>
+          <span className="character-card__desc-type">{lblSpecies}</span>
+          <span className="character-card__desc-data">{species}</span>
         </div>
         <div className="character-card__desc-item">
-          <span className="character-card__desc-type">Gender</span>
-          <span className="character-card__desc-data">Alive</span>
+          <span className="character-card__desc-type">{lblGender}</span>
+          <span className="character-card__desc-data">{gender}</span>
         </div>
         <div className="character-card__desc-item">
-          <span className="character-card__desc-type">Origin</span>
-          <span className="character-card__desc-data">Alive</span>
+          <span className="character-card__desc-type">{lblOrigin}</span>
+          <span className="character-card__desc-data">{origin}</span>
         </div>
         <div className="character-card__desc-item">
-          <span className="character-card__desc-type">Last Location</span>
-          <span className="character-card__desc-data">Alive</span>
+          <span className="character-card__desc-type">{lblLastLocation}</span>
+          <span className="character-card__desc-data">{lastLocation}</span>
         </div>
       </div>
     </div>
   );
 };
 
-export default Card;
+export default CharacterCard;

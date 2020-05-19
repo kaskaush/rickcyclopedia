@@ -1,0 +1,16 @@
+.btn {
+  background: $btn-primary;
+  border: 0;
+  padding: 0 24px;
+  border-radius: 4px;
+  color: $white;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $btn-primary-hover;
+  }
+
+  &.btn-icon {
+    padding: 10px;
+  }
+}

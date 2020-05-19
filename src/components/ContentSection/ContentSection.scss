@@ -1,9 +1,13 @@
 .content-section {
   display: flex;
   flex-direction: column;
+
   @include breakpoint(medium) {
-    margin-left: 32px;
-    flex-basis: 75%;
+    flex: 14 14 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 32px;
+    height: 100vh;
   }
 }
 

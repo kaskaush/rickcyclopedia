@@ -3,9 +3,19 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  flex: 1 1 20%;
+  flex: 1 1 auto;
+  flex-basis: 30%;
   box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.45);
   border-radius: 6px;
+  max-width: 245px;
+
+  @include breakpoint(medium) {
+    flex-basis: 35%;
+  }
+
+  @include breakpoint(xlarge) {
+    flex-basis: 20%;
+  }
 
   &__image-section {
     display: block;
