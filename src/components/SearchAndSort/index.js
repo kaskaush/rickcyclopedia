@@ -5,14 +5,20 @@ import SearchBar from "../../core-components/SearchBar";
 import { store } from "../../config/store";
 
 const SearchAndSort = () => {
-  const state = useContext(store).state;
+  const { state, dispatch } = useContext(store);
+
   const { labels, sortOptions } = state;
+
+  const searchCharacter = (searchTerm) => {
+    dispatch({ type: "SEARCH_CHAR", payload: searchTerm });
+  };
 
   return (
     <div className="search-sort">
       <SearchBar
         inputLabel={labels.lblSearchLabel}
         btnLabel={labels.lblSearchCtaLabel}
+        handleSearch={searchCharacter}
       />
       <div className="search-sort__sort-section">
         <Select _class="search-sort__sort" optionsData={sortOptions} />

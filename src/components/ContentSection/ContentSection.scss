@@ -7,7 +7,45 @@
     overflow-x: hidden;
     overflow-y: auto;
     padding: 32px;
-    height: 100vh;
+    height: calc(100vh - 32px);
+  }
+}
+
+.pagination {
+  margin: 32px auto;
+  display: flex;
+  list-style: none;
+  outline: none;
+
+  .previous,
+  .next {
+    &.disabled {
+      a {
+        color: #828282;
+      }
+    }
+  }
+
+  .active {
+    a {
+      background-color: $btn-primary;
+      color: #fff;
+    }
+  }
+
+  li {
+    a {
+      padding: 5px 15px;
+      margin: 0 5px;
+      outline: none;
+      cursor: pointer;
+      color: $white;
+      border-radius: 4px;
+
+      &:hover {
+        background-color: $grey-54;
+      }
+    }
   }
 }
 

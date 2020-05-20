@@ -5,7 +5,7 @@
   @include breakpoint(medium) {
     flex: 3 3 0;
     overflow-y: auto;
-    height: 100vh;
+    height: calc(100vh - 32px);
     padding: 32px 0 32px 32px;
   }
 }

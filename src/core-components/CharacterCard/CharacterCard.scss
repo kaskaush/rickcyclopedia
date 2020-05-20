@@ -19,12 +19,14 @@
 
   &__image-section {
     display: block;
-    min-height: 200px;
+    min-height: 245px;
     position: relative;
   }
 
   &__image {
     width: 100%;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
   }
 
   &__title-wrapper {
@@ -32,7 +34,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(0, 0, 0, 0.65);
   }
 
   &__title-section {
@@ -69,6 +71,7 @@
     background-color: #504f50;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
+    height: 100%;
   }
 
   &__desc-type {
@@ -76,10 +79,14 @@
     text-transform: uppercase;
     color: #c7c7c7;
     font-weight: 500;
+    text-align: left;
   }
 
   &__desc-data {
     font-size: 12px;
     color: #f7a73d;
+    text-align: right;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 }

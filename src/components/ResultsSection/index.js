@@ -4,16 +4,20 @@ import { store } from "../../config/store";
 
 const ResultsSection = () => {
   const state = useContext(store).state;
-  const { labels } = state;
+  const { labels, data } = state;
 
   return (
     <div className="results-section">
-      <CharacterCard labels={labels} />
-      <CharacterCard labels={labels} />
-      <CharacterCard labels={labels} />
-      <CharacterCard labels={labels} />
-      <CharacterCard labels={labels} />
-      <CharacterCard labels={labels} />
+      {data &&
+        data.results.map((character) => {
+          return (
+            <CharacterCard
+              key={character.id}
+              labels={labels}
+              character={character}
+            />
+          );
+        })}
     </div>
   );
 };
