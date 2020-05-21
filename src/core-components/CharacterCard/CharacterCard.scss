@@ -5,7 +5,7 @@
   flex-direction: column;
   flex: 1 1 auto;
   flex-basis: 30%;
-  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.45);
+  @include box-shadow-light();
   border-radius: 6px;
   max-width: 245px;
 
@@ -18,8 +18,7 @@
   }
 
   &__image-section {
-    display: block;
-    min-height: 245px;
+    display: flex;
     position: relative;
   }
 
@@ -34,7 +33,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.65);
+    background-color: rgba(0, 0, 0, 0.65);
   }
 
   &__title-section {
@@ -43,18 +42,26 @@
   }
 
   &__title {
-    font-size: 18px;
-    color: #fff;
+    font-size: 16px;
+    color: $white;
     font-weight: 500;
+
+    @include breakpoint(medium) {
+      font-size: 18px;
+    }
   }
 
   &__desc-item {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     padding-bottom: 8px;
-    border-bottom: 1px solid #353434;
+    border-bottom: 1px solid $grey-31;
     margin-bottom: 8px;
+
+    @include breakpoint(medium) {
+      flex-direction: row;
+    }
 
     &:last-child {
       border-bottom: 0;
@@ -62,13 +69,17 @@
   }
 
   &__details {
-    font-size: 13px;
-    color: #fff;
+    font-size: 11px;
+    color: $white;
+
+    @include breakpoint(medium) {
+      font-size: 13px;
+    }
   }
 
   &__content-section {
     padding: 20px 12px;
-    background-color: #504f50;
+    background-color: $grey-41;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
     height: 100%;
@@ -77,16 +88,23 @@
   &__desc-type {
     font-size: 12px;
     text-transform: uppercase;
-    color: #c7c7c7;
+    color: $grey-c7;
     font-weight: 500;
     text-align: left;
+
+    @include breakpoint(small) {
+      margin-bottom: 4px;
+    }
   }
 
   &__desc-data {
     font-size: 12px;
-    color: #f7a73d;
-    text-align: right;
+    color: $tangerine;
     word-break: break-word;
     overflow-wrap: break-word;
+
+    @include breakpoint(medium) {
+      text-align: right;
+    }
   }
 }

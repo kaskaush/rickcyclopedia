@@ -5,6 +5,7 @@
   border-radius: 4px;
   color: $white;
   cursor: pointer;
+  @include box-shadow-light();
 
   &:hover {
     background-color: $btn-primary-hover;

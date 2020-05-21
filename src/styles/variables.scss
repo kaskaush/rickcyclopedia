@@ -1,4 +1,19 @@
 $white: #fff;
+$black: #000;
+
 $grey-54: #545454;
+$grey-52: #525252;
+$grey-41: #414141;
+$grey-c7: #c7c7c7;
+$grey-31: #313131;
+$grey-88: #888888;
+
 $btn-primary: #3949ab;
 $btn-primary-hover: #303f9f;
+
+$coral-red: #ca3e47;
+$tangerine: #ec823a;
+
+@mixin box-shadow-light {
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.45);
+}

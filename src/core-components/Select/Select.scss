@@ -1,8 +1,9 @@
 .select {
-  background: #545454;
+  background: $grey-52;
   border: 0;
   padding: 10px;
   border-radius: 4px;
-  color: #fff;
+  color: $white;
   cursor: pointer;
+  @include box-shadow-light();
 }

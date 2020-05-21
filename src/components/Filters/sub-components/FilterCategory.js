@@ -1,7 +1,7 @@
 import React from "react";
 import Checkbox from "../../../core-components/Checkbox";
 
-const FilterCategory = ({ type, options }) => {
+const FilterCategory = ({ type, options, applyFilters }) => {
   return (
     <>
       <div className="filters__category">
@@ -17,6 +17,9 @@ const FilterCategory = ({ type, options }) => {
                     <Checkbox
                       label={option.type}
                       isChecked={option.isSelected}
+                      onChange={(e) => {
+                        applyFilters(type, option.type, e.target.checked);
+                      }}
                     />
                   </li>
                 );

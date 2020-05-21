@@ -12,24 +12,29 @@ const SearchBar = ({
     setSearchTerm(e.target.value);
   };
 
-  const handleSearchSubmit = () => {
+  const handleSearchSubmit = (e) => {
     handleSearch(searchTerm.trim());
+    e.preventDefault();
   };
 
   return (
     <div className="search-bar">
-      <label htmlFor="search-term" className="search-bar__title">
-        {inputLabel}
-      </label>
-      <div className="search-bar__input-section">
-        <input
-          id="search-term"
-          type="text"
-          className="search-bar__input"
-          onChange={handleSearchTerm}
-        />
-        <Button onClick={handleSearchSubmit}>{btnLabel}</Button>
-      </div>
+      <form onSubmit={handleSearchSubmit}>
+        <label htmlFor="search-term" className="search-bar__title">
+          {inputLabel}
+        </label>
+        <div className="search-bar__input-section">
+          <input
+            id="search-term"
+            type="text"
+            className="search-bar__input"
+            onChange={handleSearchTerm}
+          />
+          <Button type="submit" onClick={handleSearchSubmit}>
+            {btnLabel}
+          </Button>
+        </div>
+      </form>
     </div>
   );
 };

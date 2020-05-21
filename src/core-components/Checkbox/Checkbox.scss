@@ -20,7 +20,7 @@
     width: 0;
 
     &:checked ~ .checkmark {
-      background-color: #3949ab;
+      background-color: $btn-primary;
 
       &:after {
         display: block;
@@ -37,6 +37,7 @@
   width: 20px;
   background-color: $grey-54;
   border-radius: 2px;
+  @include box-shadow-light();
 
   &:after {
     content: "";

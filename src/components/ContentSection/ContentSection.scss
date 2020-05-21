@@ -16,6 +16,7 @@
   display: flex;
   list-style: none;
   outline: none;
+  flex-wrap: wrap;
 
   .previous,
   .next {
@@ -30,10 +31,18 @@
     a {
       background-color: $btn-primary;
       color: #fff;
+      @include box-shadow-light();
+
+      &:hover {
+        background-color: $btn-primary;
+      }
     }
   }
 
   li {
+    @include breakpoint(small) {
+      margin: 15px 0;
+    }
     a {
       padding: 5px 15px;
       margin: 0 5px;
@@ -43,7 +52,7 @@
       border-radius: 4px;
 
       &:hover {
-        background-color: $grey-54;
+        background-color: $grey-52;
       }
     }
   }

@@ -1,3 +1,23 @@
+@keyframes animate-slide-down {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes animate-slide-up {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-100%);
+  }
+}
+
 .filters {
   display: flex;
   flex-direction: column;
@@ -18,8 +38,8 @@
 
   &__toggle {
     display: block;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 900;
 
     @include breakpoint(medium) {
       display: none;
@@ -29,6 +49,16 @@
   &__section {
     display: flex;
     flex-direction: column;
+    @include breakpoint(small) {
+      max-height: 0;
+      transition: max-height 0.25s ease-out;
+      overflow: hidden;
+    }
+
+    &.expanded {
+      max-height: 1000px;
+      transition: max-height 0.25s ease-in;
+    }
   }
 
   &__category {
@@ -37,8 +67,10 @@
 
   &__name-section {
     padding: 10px;
-    background-color: $grey-54;
+    background-color: $grey-52;
     border-radius: 4px;
+    @include box-shadow-light();
+
     @include breakpoint(medium) {
       width: 70%;
     }

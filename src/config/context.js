@@ -12,41 +12,39 @@ const context = {
     lblLastLocation: "last location",
   },
   sortOptions: [
-    { value: "id", name: "Sort by ID", isSelected: false, order: "asc" },
-    { value: "name", name: "Sort by Name", isSelected: false, order: "asc" },
+    { value: "id", name: "Sort by ID" },
+    { value: "name", name: "Sort by Name" },
   ],
   filterCategories: [
     {
       type: "status",
       options: [
-        { type: "alive", isSelected: false },
-        { type: "dead", isSelected: false },
+        { type: "Alive", isSelected: false },
+        { type: "Dead", isSelected: false },
         { type: "unknown", isSelected: false },
       ],
     },
     {
       type: "species",
       options: [
-        { type: "human", isSelected: false },
-        { type: "alien", isSelected: false },
-        { type: "mytholog", isSelected: false },
-        { type: "other species", isSelected: false },
+        { type: "Human", isSelected: false },
+        { type: "Alien", isSelected: false },
+        { type: "Mytholog", isSelected: false },
       ],
     },
     {
       type: "gender",
       options: [
-        { type: "male", isSelected: false },
-        { type: "female", isSelected: false },
+        { type: "Male", isSelected: false },
+        { type: "Female", isSelected: false },
       ],
     },
     {
       type: "origin",
       options: [
         { type: "unknown", isSelected: false },
-        { type: "post-apocalyptic earth", isSelected: false },
-        { type: "nuptia 4", isSelected: false },
-        { type: "other origins", isSelected: false },
+        { type: "Post-Apocalyptic Earth", isSelected: false },
+        { type: "Nuptia 4", isSelected: false },
       ],
     },
   ],
