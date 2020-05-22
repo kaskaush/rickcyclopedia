@@ -4,16 +4,22 @@ import { store } from "../../config/store";
 
 const SelectedFilters = () => {
   const state = useContext(store).state;
-  const { labels } = state;
+  const { labels, selectedFilters } = state;
 
-  return (
-    <div className="selected-filters">
-      <h3 className="selected-filters__title">
-        {labels.lblSelectedFiltersTitle}
-      </h3>
-      <Chip label="test" />
-    </div>
-  );
+  return selectedFilters && selectedFilters.length > 0 ? (
+    <>
+      <div className="selected-filters">
+        <h3 className="selected-filters__title">
+          {labels.lblSelectedFiltersTitle}
+        </h3>
+        <div className="selected-filters__chips-section">
+          {selectedFilters.map((selFilter) => {
+            return <Chip key={selFilter} label={selFilter} />;
+          })}
+        </div>
+      </div>
+    </>
+  ) : null;
 };
 
 export default SelectedFilters;

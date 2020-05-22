@@ -9,8 +9,48 @@ const getSearchData = (cloneData, searchTerm) => {
   return filteredData;
 };
 
-const getFilteredData = (baseData, filterData) => {
-  let filteredData = filter(baseData, filterData);
+const getFilteredData = (cloneData, filterData) => {
+  let filterObj = new Map();
+  let filteredData = [];
+
+  filterData.forEach((filter) => {
+    filter.options.forEach((option) => {
+      if (option.isSelected) {
+        if (!filterObj.has(filter.type)) {
+          let optionsArray = [];
+          optionsArray.push(option.type);
+          filterObj.set(filter.type, optionsArray);
+        } else {
+          filterObj.get(filter.type).push(option.type);
+        }
+      } else {
+        if (filterObj.has(filter.type)) {
+          const optionsInMap = filterObj.get(filter.type);
+          const index = optionsInMap && optionsInMap.indexOf(option.type);
+          if (index !== -1) optionsInMap.splice(index, 1);
+        }
+      }
+    });
+  });
+
+  if (filterObj.size) {
+    filterObj.forEach((value, key) => {
+      cloneData.forEach((character) => {
+        if (key !== "origin") {
+          if (value.includes(character[key])) {
+            filteredData.push(character);
+          }
+        } else {
+          if (value.includes(character[key].name)) {
+            filteredData.push(character);
+          }
+        }
+      });
+    });
+  } else {
+    filteredData = cloneData;
+  }
+
   return filteredData;
 };
 

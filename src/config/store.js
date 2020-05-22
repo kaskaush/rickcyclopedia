@@ -8,7 +8,7 @@ const store = createContext(initialState);
 const { Provider } = store;
 
 let cloneData = null;
-let appliedFilters = new Set();
+let selectedFilters = [];
 
 const StateProvider = ({ children }) => {
   const [state, dispatch] = useReducer((state, action) => {
@@ -22,8 +22,6 @@ const StateProvider = ({ children }) => {
         return { ...state, data: { ...state.data, results: searchResults } };
 
       case "APPLY_FILTER":
-        let filter = { [action.payload.type]: action.payload.optionType };
-        appliedFilters.add(action.payload);
         let updatedFilterContext = state.filterCategories;
 
         updatedFilterContext.forEach((category) => {
@@ -31,14 +29,23 @@ const StateProvider = ({ children }) => {
             category.options.forEach((option) => {
               if (option.type === action.payload.optionType) {
                 option.isSelected = action.payload.isChecked;
+                if (action.payload.isChecked) {
+                  selectedFilters.push(action.payload.optionType);
+                } else {
+                  const index = selectedFilters.indexOf(option.type);
+                  if (index !== -1) selectedFilters.splice(index, 1);
+                }
               }
             });
           }
         });
-        const filterResults = getFilteredData(state.data.results, filter);
+
+        const filterResults = getFilteredData(cloneData, updatedFilterContext);
+
         return {
           ...state,
           filterCategories: updatedFilterContext,
+          selectedFilters,
           data: { ...state.data, results: filterResults },
         };
 

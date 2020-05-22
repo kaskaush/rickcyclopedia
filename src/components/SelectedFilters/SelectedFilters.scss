@@ -9,4 +9,10 @@
     color: $white;
     margin-bottom: 16px;
   }
+
+  &__chips-section {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }

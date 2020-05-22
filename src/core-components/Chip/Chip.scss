@@ -7,10 +7,14 @@
   font-size: 14px;
   border-radius: 25px;
   background-color: $grey-52;
-  max-width: 100px;
   color: $white;
   text-overflow: ellipsis;
+  margin-right: 12px;
   @include box-shadow-light();
+
+  &__label {
+    margin-right: 8px;
+  }
 
   &__closebtn {
     cursor: pointer;

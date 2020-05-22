@@ -13,12 +13,10 @@ const Filters = () => {
   const [expandOrCollapse, setExpandOrCollapse] = useState(false);
 
   const applyFilters = (type, optionType, isChecked) => {
-    if (isChecked) {
-      dispatch({
-        type: "APPLY_FILTER",
-        payload: { type, optionType, isChecked },
-      });
-    }
+    dispatch({
+      type: "APPLY_FILTER",
+      payload: { type, optionType, isChecked },
+    });
   };
 
   const toggleFilterSection = () => {

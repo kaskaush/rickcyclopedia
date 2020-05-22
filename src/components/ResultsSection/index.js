@@ -12,7 +12,7 @@ const ResultsSection = () => {
         data.results.map((character) => {
           return (
             <CharacterCard
-              key={character.id}
+              key={`${character.id}_${character.name}`}
               labels={labels}
               character={character}
             />
