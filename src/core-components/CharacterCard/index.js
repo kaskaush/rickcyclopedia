@@ -1,4 +1,5 @@
 import React from "react";
+import { objectOf, string, number, oneOfType, object, array } from "prop-types";
 import { getTimestamp } from "../../utility/getRelativeTimestamp";
 
 const CharacterCard = ({ labels = {}, character = {} }) => {
@@ -59,6 +60,11 @@ const CharacterCard = ({ labels = {}, character = {} }) => {
       </div>
     </div>
   );
+};
+
+CharacterCard.propTypes = {
+  labels: objectOf(string),
+  character: objectOf(oneOfType([string, number, object, array])),
 };
 
 export default CharacterCard;

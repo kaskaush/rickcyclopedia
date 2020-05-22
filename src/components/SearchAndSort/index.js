@@ -43,12 +43,14 @@ const SearchAndSort = () => {
           defaultValue="id"
           onChange={handleSortParam}
         />
-        <Button isIcon onClick={() => handleSort("asc")}>
-          &#9650;
-        </Button>
-        <Button isIcon onClick={() => handleSort("desc")}>
-          &#9660;
-        </Button>
+        <div className="search-sort__cta-section">
+          <Button isIcon onClick={() => handleSort("asc")}>
+            <i className="fa fa-chevron-up"></i>
+          </Button>
+          <Button isIcon onClick={() => handleSort("desc")}>
+            <i className="fa fa-chevron-down"></i>
+          </Button>
+        </div>
       </div>
     </div>
   );

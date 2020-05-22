@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
+import { func } from "prop-types";
+import ReactPaginate from "react-paginate";
 import SelectedFilters from "../SelectedFilters";
 import SearchAndSort from "../SearchAndSort";
 import ResultsSection from "../ResultsSection";
 import NoResults from "../../core-components/NoResults";
-import ReactPaginate from "react-paginate";
 import { store } from "../../config/store";
 
 const ContentSection = ({ fetchData }) => {
@@ -42,5 +43,7 @@ const ContentSection = ({ fetchData }) => {
     </div>
   );
 };
+
+ContentSection.propTypes = { fetchData: func };
 
 export default ContentSection;

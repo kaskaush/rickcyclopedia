@@ -1,4 +1,5 @@
 import React from "react";
+import { string } from "prop-types";
 
 const NoResults = ({ message = "" }) => {
   return (
@@ -6,6 +7,10 @@ const NoResults = ({ message = "" }) => {
       <p className="no-results__message">{message}</p>
     </div>
   );
+};
+
+NoResults.propTypes = {
+  message: string,
 };
 
 export default NoResults;

@@ -1,4 +1,5 @@
 import React from "react";
+import { string, arrayOf, object, func } from "prop-types";
 import Checkbox from "../../../core-components/Checkbox";
 
 const FilterCategory = ({ type, options, applyFilters }) => {
@@ -29,6 +30,12 @@ const FilterCategory = ({ type, options, applyFilters }) => {
       </div>
     </>
   );
+};
+
+FilterCategory.propTypes = {
+  type: string,
+  options: arrayOf(object),
+  applyFilters: func,
 };
 
 export default FilterCategory;

@@ -1,4 +1,5 @@
 import React from "react";
+import { string, func, arrayOf, object } from "prop-types";
 
 const Select = ({
   id = "",
@@ -28,6 +29,16 @@ const Select = ({
         })}
     </select>
   );
+};
+
+Select.propTypes = {
+  id: string,
+  ariaLabel: string,
+  testId: string,
+  defaultValue: string,
+  onChange: func || undefined,
+  optionsData: arrayOf(object),
+  _class: string,
 };
 
 export default Select;

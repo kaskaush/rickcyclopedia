@@ -1,4 +1,5 @@
 import React from "react";
+import { string, bool, func } from "prop-types";
 
 const Checkbox = ({
   id = "",
@@ -21,6 +22,15 @@ const Checkbox = ({
       <span className="checkmark"></span>
     </label>
   );
+};
+
+Checkbox.propTypes = {
+  id: string,
+  label: string,
+  isChecked: bool,
+  onChange: func || undefined,
+  _class: string,
+  testId: string,
 };
 
 export default Checkbox;

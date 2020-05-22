@@ -5,7 +5,7 @@
   margin: 16px;
   flex: 1 1 auto;
 
-  @include breakpoint(medium) {
+  @include breakpoint(large) {
     flex-direction: row;
     overflow: hidden;
     margin: 0;

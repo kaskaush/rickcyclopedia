@@ -3,7 +3,7 @@
   flex-direction: column;
   margin-bottom: 16px;
 
-  @include breakpoint(medium) {
+  @include breakpoint(large) {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
@@ -12,18 +12,26 @@
   &__sort-section {
     display: flex;
     flex-direction: row;
-    @include breakpoint(small) {
-      margin-top: 8px;
+    justify-content: space-between;
+    margin-top: 16px;
+
+    @include breakpoint(large) {
+      justify-content: flex-start;
+      margin-top: 0;
     }
 
     .btn {
       &:last-child {
-        margin-left: 4px;
+        margin-left: 8px;
       }
     }
   }
 
   &__sort {
-    margin-right: 4px;
+    margin-right: 8px;
+    flex: 1;
+    @include breakpoint(medium) {
+      flex: inherit;
+    }
   }
 }

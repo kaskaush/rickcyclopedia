@@ -9,7 +9,7 @@
   background-color: $grey-52;
   color: $white;
   text-overflow: ellipsis;
-  margin-right: 12px;
+  margin: 8px 12px 0 0;
   @include box-shadow-light();
 
   &__label {

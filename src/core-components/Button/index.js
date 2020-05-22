@@ -1,4 +1,5 @@
 import React from "react";
+import { string, bool, func, node } from "prop-types";
 
 const Button = ({
   id = "",
@@ -22,6 +23,17 @@ const Button = ({
       {children}
     </button>
   );
+};
+
+Button.propTypes = {
+  id: string,
+  isIcon: bool,
+  _class: string,
+  ariaLabel: string,
+  onClick: func || undefined,
+  testId: string,
+  children: node,
+  type: string,
 };
 
 export default Button;

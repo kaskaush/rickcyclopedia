@@ -5,7 +5,7 @@ import { store } from "../../config/store";
 import { apiService } from "../../utility/apiService";
 import Spinner from "../../core-components/Spinner";
 
-const Main = ({}) => {
+const Main = () => {
   const context = useContext(store);
   const { state, dispatch } = context;
 
@@ -33,6 +33,7 @@ const Main = ({}) => {
 
   useEffect(() => {
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

@@ -41,7 +41,7 @@
     font-size: 15px;
     font-weight: 900;
 
-    @include breakpoint(medium) {
+    @include breakpoint(large) {
       display: none;
     }
   }
@@ -49,10 +49,13 @@
   &__section {
     display: flex;
     flex-direction: column;
-    @include breakpoint(small) {
-      max-height: 0;
-      transition: max-height 0.25s ease-out;
-      overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.25s ease-out;
+    overflow: hidden;
+
+    @include breakpoint(large) {
+      overflow: auto;
+      max-height: inherit;
     }
 
     &.expanded {
@@ -71,7 +74,7 @@
     border-radius: 4px;
     @include box-shadow-light();
 
-    @include breakpoint(medium) {
+    @include breakpoint(large) {
       width: 70%;
     }
   }

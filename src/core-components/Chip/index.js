@@ -1,4 +1,5 @@
 import React from "react";
+import { string, func } from "prop-types";
 
 const Chip = ({ label = "", onClose = undefined }) => {
   return (
@@ -14,6 +15,11 @@ const Chip = ({ label = "", onClose = undefined }) => {
       )}
     </div>
   );
+};
+
+Chip.propTypes = {
+  label: string,
+  onClose: func || undefined,
 };
 
 export default Chip;

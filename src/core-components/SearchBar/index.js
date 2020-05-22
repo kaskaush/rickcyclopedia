@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { string, func } from "prop-types";
 import Button from "../Button";
 
 const SearchBar = ({
@@ -37,6 +38,12 @@ const SearchBar = ({
       </form>
     </div>
   );
+};
+
+SearchBar.propTypes = {
+  inputLabel: string,
+  btnLabel: string,
+  handleSearch: func || undefined,
 };
 
 export default SearchBar;

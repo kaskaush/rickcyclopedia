@@ -8,7 +8,7 @@ const store = createContext(initialState);
 const { Provider } = store;
 
 let cloneData = null;
-let selectedFilters = [];
+let selectedFilters = new Set();
 
 const StateProvider = ({ children }) => {
   const [state, dispatch] = useReducer((state, action) => {
@@ -30,10 +30,9 @@ const StateProvider = ({ children }) => {
               if (option.type === action.payload.optionType) {
                 option.isSelected = action.payload.isChecked;
                 if (action.payload.isChecked) {
-                  selectedFilters.push(action.payload.optionType);
+                  selectedFilters.add(action.payload.optionType);
                 } else {
-                  const index = selectedFilters.indexOf(option.type);
-                  if (index !== -1) selectedFilters.splice(index, 1);
+                  selectedFilters.delete(option.type);
                 }
               }
             });

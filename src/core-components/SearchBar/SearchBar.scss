@@ -22,5 +22,10 @@
     color: $white;
     margin-right: 8px;
     @include box-shadow-light();
+    flex: 1;
+
+    @include breakpoint(large) {
+      flex: inherit;
+    }
   }
 }

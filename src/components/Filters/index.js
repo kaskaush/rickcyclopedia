@@ -28,7 +28,7 @@ const Filters = () => {
       <div className="filters__title-section">
         <h3 className="filters__title">{labels.lblFiltersTitle}</h3>
         <Button isIcon _class="filters__toggle" onClick={toggleFilterSection}>
-          &#65291;
+          <i className={`fa fa-${expandOrCollapse ? "minus" : "plus"}`}></i>
         </Button>
       </div>
       <div className={`filters__section ${expandOrCollapse ? "expanded" : ""}`}>
