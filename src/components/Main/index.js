@@ -23,9 +23,7 @@ const Main = () => {
         const errorPayload = error.data;
 
         if (errorPayload) {
-          this.setState({
-            errors: errorPayload.messages,
-          });
+          dispatch({ type: "CLEAR_DATA" });
         }
       }
     });

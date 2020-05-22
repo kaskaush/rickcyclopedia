@@ -51,6 +51,10 @@ const StateProvider = ({ children }) => {
       case "SORT_DATA":
         const sortedResults = getSortedData(state.data.results, action.payload);
         return { ...state, data: { ...state.data, results: sortedResults } };
+
+      case "CLEAR_DATA":
+        return { ...state, data: [] };
+
       default:
         throw new Error();
     }
