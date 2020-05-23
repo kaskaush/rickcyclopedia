@@ -1,7 +1,7 @@
 import React from "react";
 import { string } from "prop-types";
 
-const Header = ({ logo }) => {
+const Header = ({ logo = "" }) => {
   return (
     <header className="header">
       <div className="header__logo">

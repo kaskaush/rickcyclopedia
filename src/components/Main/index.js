@@ -4,6 +4,7 @@ import ContentSection from "../ContentSection";
 import { store } from "../../config/store";
 import { apiService } from "../../utility/apiService";
 import Spinner from "../../core-components/Spinner";
+import { ACT_FETCH_DATA, ACT_CLEAR_DATA } from "../../utility/constants";
 
 const Main = () => {
   const context = useContext(store);
@@ -16,14 +17,14 @@ const Main = () => {
 
       if (response) {
         const responsePayload = response.data;
-        dispatch({ type: "FETCH_DATA", payload: responsePayload });
+        dispatch({ type: ACT_FETCH_DATA, payload: responsePayload });
       }
 
       if (error) {
         const errorPayload = error.data;
 
         if (errorPayload) {
-          dispatch({ type: "CLEAR_DATA" });
+          dispatch({ type: ACT_CLEAR_DATA });
         }
       }
     });

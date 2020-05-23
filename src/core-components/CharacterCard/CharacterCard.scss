@@ -104,6 +104,7 @@
 
     @include breakpoint(large) {
       text-align: right;
+      max-width: 110px;
     }
   }
 }
