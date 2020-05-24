@@ -214,7 +214,7 @@ describe("helper functions", () => {
       },
     ];
 
-    expect(getFilteredData(baseData, filters)).toHaveLength(6);
+    expect(getFilteredData(baseData, baseData, filters)).toHaveLength(6);
   });
 
   it("should return search data", () => {

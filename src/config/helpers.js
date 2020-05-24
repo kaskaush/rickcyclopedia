@@ -9,9 +9,9 @@ const getSearchData = (cloneData, searchTerm) => {
   return filteredData;
 };
 
-const getFilteredData = (cloneData, filterData) => {
-  let filterObj = new Map();
+const getFilteredData = (updatedData, cloneData, filterData) => {
   let filteredData = [];
+  let filterObj = new Map();
 
   filterData.forEach((filter) => {
     filter.options.forEach((option) => {
@@ -35,20 +35,12 @@ const getFilteredData = (cloneData, filterData) => {
 
   if (filterObj.size) {
     filterObj.forEach((value, key) => {
-      cloneData.forEach((character) => {
-        if (key !== "origin") {
-          if (value.includes(character[key])) {
-            filteredData.push(character);
-          }
-        } else {
-          if (value.includes(character[key].name)) {
-            filteredData.push(character);
-          }
-        }
+      value.forEach((filData) => {
+        let obj = { [key]: filData };
+        let foundData = filter(cloneData, obj);
+        filteredData.push(...foundData);
       });
     });
-  } else {
-    filteredData = cloneData;
   }
 
   return filteredData;
