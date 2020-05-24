@@ -9,6 +9,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Screenshots
 
 ![image info](screenshots/home.png)
+![image info](screenshots/search.png)
+![image info](screenshots/filter.png)
 
 ## Available Scripts
 
