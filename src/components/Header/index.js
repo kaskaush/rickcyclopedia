@@ -1,12 +1,13 @@
 import React from "react";
 import { string } from "prop-types";
+import { LBL_LOGO } from "../../utility/constants";
 
-const Header = ({ logo = "" }) => {
+const Header = () => {
   return (
     <header className="header">
       <div className="header__logo">
         <a className="header__logo-link" href="/">
-          {logo}
+          {LBL_LOGO}
         </a>
       </div>
     </header>

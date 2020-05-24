@@ -2,13 +2,14 @@ import React from "react";
 import "./styles/App.scss";
 import Header from "./components/Header";
 import Main from "./components/Main";
-import { LBL_LOGO } from "./utility/constants";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
     <div className="App">
-      <Header logo={LBL_LOGO} />
+      <Header />
       <Main />
+      <Footer />
     </div>
   );
 };

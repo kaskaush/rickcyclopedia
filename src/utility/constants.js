@@ -26,3 +26,8 @@ export const ACT_SEARCH_CHAR = "SEARCH_CHAR";
 export const ACT_APPLY_FILTER = "APPLY_FILTER";
 export const ACT_SORT_DATA = "SORT_DATA";
 export const ACT_CLEAR_DATA = "CLEAR_DATA";
+
+/* App */
+export const APP_NAME = "Rickcyclopedia";
+export const GIT_LINK = "https://github.com/kaskaush";
+export const GIT_NAME = "Kaushik Kasibhatla";
