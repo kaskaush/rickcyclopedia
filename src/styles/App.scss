@@ -3,6 +3,7 @@
 
 /* Mixins */
 @import "./break-points.mixins.scss";
+@import "./custom-scrollbar.scss";
 
 /* Core components */
 @import "../core-components/Button/Button.scss";
@@ -16,6 +17,7 @@
 /* Components */
 @import "../components/Header/Header.scss";
 @import "../components/Main/Main.scss";
+@import "../components/Footer/Footer.scss";
 
 .App {
   padding-top: 57px;

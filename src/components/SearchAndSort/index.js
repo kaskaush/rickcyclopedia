@@ -3,21 +3,25 @@ import Button from "../../core-components/Button";
 import Select from "../../core-components/Select";
 import SearchBar from "../../core-components/SearchBar";
 import { store } from "../../config/store";
+import {
+  ACT_SEARCH_CHAR,
+  ACT_SORT_DATA,
+  LBL_SEARCH,
+  LBL_SEARCH_CTA,
+} from "../../utility/constants";
 
 const SearchAndSort = () => {
   const { state, dispatch } = useContext(store);
-
   const [sortParam, setSortParam] = useState("id");
-
-  const { labels, sortOptions } = state;
+  const { sortOptions } = state;
 
   const searchCharacter = (searchTerm) => {
-    dispatch({ type: "SEARCH_CHAR", payload: searchTerm });
+    dispatch({ type: ACT_SEARCH_CHAR, payload: searchTerm });
   };
 
   const handleSort = (sortOrder) => {
     dispatch({
-      type: "SORT_DATA",
+      type: ACT_SORT_DATA,
       payload: {
         sortParam,
         sortOrder,
@@ -32,8 +36,8 @@ const SearchAndSort = () => {
   return (
     <div className="search-sort">
       <SearchBar
-        inputLabel={labels.lblSearchLabel}
-        btnLabel={labels.lblSearchCtaLabel}
+        inputLabel={LBL_SEARCH}
+        btnLabel={LBL_SEARCH_CTA}
         handleSearch={searchCharacter}
       />
       <div className="search-sort__sort-section">

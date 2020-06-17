@@ -2,11 +2,12 @@ import React, { useContext, useState } from "react";
 import FilterCategory from "./sub-components/FilterCategory";
 import Button from "../../core-components/Button";
 import { store } from "../../config/store";
+import { ACT_APPLY_FILTER, LBL_FILTERS_TITLE } from "../../utility/constants";
 
 const Filters = () => {
   const context = useContext(store);
   const {
-    state: { labels, filterCategories },
+    state: { filterCategories },
     dispatch,
   } = context;
 
@@ -14,7 +15,7 @@ const Filters = () => {
 
   const applyFilters = (type, optionType, isChecked) => {
     dispatch({
-      type: "APPLY_FILTER",
+      type: ACT_APPLY_FILTER,
       payload: { type, optionType, isChecked },
     });
   };
@@ -26,7 +27,7 @@ const Filters = () => {
   return (
     <div className="filters">
       <div className="filters__title-section">
-        <h3 className="filters__title">{labels.lblFiltersTitle}</h3>
+        <h3 className="filters__title">{LBL_FILTERS_TITLE}</h3>
         <Button isIcon _class="filters__toggle" onClick={toggleFilterSection}>
           <i className={`fa fa-${expandOrCollapse ? "minus" : "plus"}`}></i>
         </Button>

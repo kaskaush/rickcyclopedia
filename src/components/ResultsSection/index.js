@@ -4,7 +4,7 @@ import { store } from "../../config/store";
 
 const ResultsSection = () => {
   const state = useContext(store).state;
-  const { labels, data } = state;
+  const { data } = state;
 
   return (
     <div className="results-section">
@@ -13,7 +13,6 @@ const ResultsSection = () => {
           return (
             <CharacterCard
               key={`${character.id}_${character.name}`}
-              labels={labels}
               character={character}
             />
           );

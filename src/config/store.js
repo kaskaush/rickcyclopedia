@@ -39,7 +39,11 @@ const StateProvider = ({ children }) => {
           }
         });
 
-        const filterResults = getFilteredData(cloneData, updatedFilterContext);
+        const filterResults = getFilteredData(
+          state.data.results,
+          cloneData,
+          updatedFilterContext
+        );
 
         return {
           ...state,

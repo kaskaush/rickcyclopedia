@@ -1,16 +1,4 @@
 const context = {
-  labels: {
-    lblLogo: "Rickcyclopedia.",
-    lblFiltersTitle: "Filters",
-    lblSelectedFiltersTitle: "Selected filters",
-    lblSearchLabel: "Search by name",
-    lblSearchCtaLabel: "Search",
-    lblStatus: "status",
-    lblSpecies: "species",
-    lblGender: "gender",
-    lblOrigin: "origin",
-    lblLastLocation: "last location",
-  },
   sortOptions: [
     { value: "id", name: "Sort by ID" },
     { value: "name", name: "Sort by Name" },
@@ -48,7 +36,6 @@ const context = {
       ],
     },
   ],
-  results: [],
 };
 
 export default context;
