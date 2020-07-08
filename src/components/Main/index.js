@@ -5,18 +5,34 @@ import { store } from "../../config/store";
 import { apiService } from "../../utility/apiService";
 import Spinner from "../../core-components/Spinner";
 import { ACT_FETCH_DATA, ACT_CLEAR_DATA } from "../../utility/constants";
+import { Service } from "../../utility/indexeddbService";
 
 const Main = () => {
   const context = useContext(store);
   const { state, dispatch } = context;
 
   const fetchData = (page = "") => {
+    Service.get(page ? page : "?page=1")
+      .then((response) => {
+        if (response) {
+          dispatch({ type: ACT_FETCH_DATA, payload: response });
+        } else {
+          makeApiRequest(page);
+        }
+      })
+      .catch((err) => {
+        console.log("DATA_RETRIEVE_ERR==>", err);
+      });
+  };
+
+  const makeApiRequest = (page) => {
     const promise = apiService({ url: page, data: { requestType: "GET" } });
     promise.then((details) => {
       const { response, error } = details;
 
       if (response) {
         const responsePayload = response.data;
+        Service.put(responsePayload, page ? page : "?page=1");
         dispatch({ type: ACT_FETCH_DATA, payload: responsePayload });
       }
 
