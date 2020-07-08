@@ -3,6 +3,7 @@
 A character data base app to find your favorite Rick and Morty character!
 
 Uses the rickandmorty API available for free.
+Uses IndexedDB for better performance.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
