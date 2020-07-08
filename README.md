@@ -6,6 +6,9 @@ Uses the rickandmorty API available for free.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Checkout the demo here!
+https://kaskaush.github.io/rickcyclopedia/
+
 ## Screenshots
 
 ![image info](screenshots/home.png)
