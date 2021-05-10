@@ -13,7 +13,7 @@
     "lodash.filter": "^4.6.0",
     "lodash.orderby": "^4.6.0",
     "node-sass": "^4.14.1",
-    "react": "^16.13.1",
+    "react": "^16.14.0",
     "react-dom": "^16.13.1",
     "react-paginate": "^6.3.2",
     "react-scripts": "3.4.1"
