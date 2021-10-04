@@ -5,7 +5,7 @@
   "homepage": "http://kaskaush.github.io/rickcyclopedia",
   "dependencies": {
     "@testing-library/jest-dom": "^5.10.1",
-    "@testing-library/react": "^10.2.1",
+    "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^12.0.2",
     "axios": "^0.21.1",
     "idb": "^5.0.4",
